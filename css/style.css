@@ -1,0 +1,260 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #F1F1F1;
+    --white: #ffffff;
+    --black: #333333;
+    --gray: #CCCCCC;
+    --header: #F1F1F1;
+    --footer: #616161;
+    --shadow: 0 0 10px 0 rgba(0,0,0,0.25);
+}
+
+html {
+    font-size: 14px;
+    line-height: 1.6;
+    font-family: sans-serif;
+}
+
+body {
+    background: var(--bg);
+    color: var(--black);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+a {
+    text-decoration: none;
+    transition: 0.3s ease-in;
+}
+
+.button {
+    padding: 15px 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--white);
+}
+.button:hover {
+    background: var(--gray);
+    border-color: var(--gray);
+}
+
+
+.black {
+    background: var(--black);
+    color: var(--white);
+    padding: 3px 5px;
+}
+
+
+.wrapper {
+    display: grid;
+    grid-template-rows: auto auto 10rem;
+}
+
+/*                                 header
+*******************************************/
+header {
+    padding: 3rem 0;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    gap: 5px;
+}
+header h1 {
+    font-size: 2.75rem;
+    text-transform: uppercase;
+}
+header p {
+    font-size: 1.15rem;
+}
+
+/*                                 main
+*******************************************/
+main {
+    padding: 30px;
+
+    display: grid;
+    grid-template-columns: 7fr 3fr;
+    gap: 40px;
+}
+main img {
+    width: 100%;
+    object-fit: cover;
+}
+
+    /*      article     */
+article {
+    display: grid;
+    gap: 40px;
+}
+.blogpost {
+    background: var(--white);
+    display: grid;
+    gap: 30px;
+    grid-template-rows: auto auto auto;
+    box-shadow: var(--shadow);
+}
+.blogpost-summary {
+    padding: 0 20px;
+}
+.blogpost-summary > * {
+    margin-bottom: 10px;
+}
+.blogpost-summary h2 {
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+.blogpost-summary .date {
+    color: var(--footer);
+    font-size: 1.1rem;
+}
+.blogpost-summary p {
+    font-size: 1.35rem;
+}
+.blogpost-summary p.description {
+    font-size: inherit;
+}
+.blogpost-footer {
+    padding: 0 20px 20px 20px;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    justify-content: space-between;
+}
+.blogpost-footer .button {
+    border: 1px solid var(--gray);
+    color: var(--black);
+}
+.blogpost-footer p {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+    /*      aside       */
+aside {
+    display: grid;
+    gap: 40px;
+}
+.links {
+    background: white;
+    display: grid;
+    grid-template-rows: auto repeat(4, 100px);
+    box-shadow: var(--shadow);
+}
+.sidebox-header {
+    background: var(--black);
+    color: white;
+    padding: 20px;
+    font-size: 1.5rem;
+}
+.link-box {
+    padding: 0 20px;
+    display: grid;
+    gap: 15px;
+    grid-template-columns: 60px 1fr;
+    align-items: center;
+    background: var(--white);
+    color: var(--black);
+    border-bottom: 1px solid var(--gray);
+}
+.link-box:hover {
+    background: var(--gray);
+}
+.link-box:last-child {
+    border-bottom: 0;
+}
+.link-box h4 {
+    font-size: 1.5rem;
+}
+
+.tags {
+    box-shadow: var(--shadow);
+}
+.tag-box {
+    background: var(--white);
+    padding: 20px;
+}
+.tag-link {
+    display: inline-block;
+    margin-bottom: 7px;
+    margin-right: 3px;
+    padding: 0px 8px;
+    font-size: 1rem;
+    color: var(--black);
+    background: var(--gray);
+    border-radius: 15px;
+}
+.tag-link.active {
+    background: var(--black);
+    color: var(--white);
+    font-size: 1.1rem;
+}
+
+/*                                 footer
+*******************************************/
+footer {
+    background: var(--footer);
+    padding: 0 40px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(2, auto) 1fr;
+    align-items: center;
+    justify-content: start;
+}
+
+.button-prev {
+    background: #444444;
+    cursor: no-drop;
+}
+.button-prev:hover {
+    background: #818181;
+}
+.button-next {
+    background: var(--black);
+}
+.button-next:hover {
+    color: var(--black);
+    background: var(--gray);
+}
+
+footer p {
+    grid-column: 3 / -1;
+    justify-self: end;
+    color: var(--gray);
+}
+
+footer p a {
+    color: var(--white);
+}
+
+
+
+
+/*************************************              
+                            responsive
+*******************************************/
+
+@media screen and (max-width: 800px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+    aside {
+        grid-template-columns: 1fr 1fr;
+    }
+    .tags {
+        grid-column: 1 / -1;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    aside {
+        grid-template-columns: 1fr;
+    }
+}
